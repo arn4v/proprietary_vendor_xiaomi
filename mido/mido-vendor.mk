@@ -38,6 +38,12 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/mido/proprietary/etc/camera/s5k5e8_ofilm_chromatix.xml:system/etc/camera/s5k5e8_ofilm_chromatix.xml \
     vendor/xiaomi/mido/proprietary/etc/camera/s5k5e8_qtech_chromatix.xml:system/etc/camera/s5k5e8_qtech_chromatix.xml \
     vendor/xiaomi/mido/proprietary/etc/camera/s5k5e8_sunny_chromatix.xml:system/etc/camera/s5k5e8_sunny_chromatix.xml \
+    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.b00:system/etc/firmware/a506_zap.b00 \
+    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.b01:system/etc/firmware/a506_zap.b01 \
+    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.b02:system/etc/firmware/a506_zap.b02 \
+    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.mdt:system/etc/firmware/a506_zap.mdt \
+    vendor/xiaomi/mido/proprietary/etc/firmware/a530_pfp.fw:system/etc/firmware/a530_pfp.fw \
+    vendor/xiaomi/mido/proprietary/etc/firmware/a530_pm4.fw:system/etc/firmware/a530_pm4.fw \
     vendor/xiaomi/mido/proprietary/etc/firmware/cpp_firmware_v1_10_0.fw:system/etc/firmware/cpp_firmware_v1_10_0.fw \
     vendor/xiaomi/mido/proprietary/etc/firmware/cpp_firmware_v1_1_1.fw:system/etc/firmware/cpp_firmware_v1_1_1.fw \
     vendor/xiaomi/mido/proprietary/etc/firmware/cpp_firmware_v1_1_6.fw:system/etc/firmware/cpp_firmware_v1_1_6.fw \
@@ -59,12 +65,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/mido/proprietary/etc/firmware/rampatch_tlv_3.2.tlv:system/etc/firmware/rampatch_tlv_3.2.tlv \
     vendor/xiaomi/mido/proprietary/lib/hw/fingerprint.searchf.so:system/lib/hw/fingerprint.searchf.so \
     vendor/xiaomi/mido/proprietary/lib/libDiracAPI_SHARED.so:system/lib/libDiracAPI_SHARED.so \
-    vendor/xiaomi/mido/proprietary/lib/libcom_fingerprints_service.so:system/lib/libcom_fingerprints_service.so \
     vendor/xiaomi/mido/proprietary/lib/soundfx/libdirac.so:system/lib/soundfx/libdirac.so \
     vendor/xiaomi/mido/proprietary/lib64/hw/fingerprint.goodix.so:system/lib64/hw/fingerprint.goodix.so \
     vendor/xiaomi/mido/proprietary/lib64/hw/fingerprint.searchf.so:system/lib64/hw/fingerprint.searchf.so \
     vendor/xiaomi/mido/proprietary/lib64/hw/gxfingerprint.default.so:system/lib64/hw/gxfingerprint.default.so \
-    vendor/xiaomi/mido/proprietary/lib64/libcom_fingerprints_service.so:system/lib64/libcom_fingerprints_service.so \
     vendor/xiaomi/mido/proprietary/lib64/libfp_client.so:system/lib64/libfp_client.so \
     vendor/xiaomi/mido/proprietary/lib64/libfpnav.so:system/lib64/libfpnav.so \
     vendor/xiaomi/mido/proprietary/lib64/libfpservice.so:system/lib64/libfpservice.so \
@@ -640,20 +644,16 @@ PRODUCT_PACKAGES += \
     libts_face_beautify_hal \
     qdcm_calib_data_nt35532_fhd_video_mode_dsi_panel \
     qdcm_calib_data_nt35596_tianma_fhd_video_mode_dsi_panel
+
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.b00:system/etc/firmware/a506_zap.b00 \
-    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.b01:system/etc/firmware/a506_zap.b01 \
-    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.b02:system/etc/firmware/a506_zap.b02 \
-    vendor/xiaomi/mido/proprietary/etc/firmware/a506_zap.mdt:system/etc/firmware/a506_zap.mdt \
-    vendor/xiaomi/mido/proprietary/etc/firmware/a530_pfp.fw:system/etc/firmware/a530_pfp.fw \
-    vendor/xiaomi/mido/proprietary/etc/firmware/a530_pm4.fw:system/etc/firmware/a530_pm4.fw \
-    vendor/xiaomi/mido/proprietary/etc/permissions/com.qti.snapdragon.sdk.display.xml:system/vendor/etc/permissions/com.qti.snapdragon.sdk.display.xml \
+    vendor/xiaomi/mido/proprietary/etc/permissions/com.qti.snapdragon.sdk.display.xml:system/etc/permissions/com.qti.snapdragon.sdk.display.xml \
     vendor/xiaomi/mido/proprietary/etc/permissions/com.quicinc.cne.xml:system/etc/permissions/com.quicinc.cne.xml \
     vendor/xiaomi/mido/proprietary/etc/permissions/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
     vendor/xiaomi/mido/proprietary/etc/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
     vendor/xiaomi/mido/proprietary/etc/permissions/qti-vzw-ims-internal.xml:system/etc/permissions/qti-vzw-ims-internal.xml \
     vendor/xiaomi/mido/proprietary/etc/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml \
     vendor/xiaomi/mido/proprietary/etc/permissions/telephonyservice.xml:system/etc/permissions/telephonyservice.xml \
+    vendor/xiaomi/mido/proprietary/framework/telephony-ext.jar:system/framework/telephony-ext.jar \
     vendor/xiaomi/mido/proprietary/lib/com.qualcomm.qti.imscmservice@1.0.so:system/lib/com.qualcomm.qti.imscmservice@1.0.so \
     vendor/xiaomi/mido/proprietary/lib/lib-imscamera.so:system/lib/lib-imscamera.so \
     vendor/xiaomi/mido/proprietary/lib/lib-imsvideocodec.so:system/lib/lib-imsvideocodec.so \
@@ -1083,9 +1083,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/mido/proprietary/vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so:system/vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so \
     vendor/xiaomi/mido/proprietary/vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so:system/vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so \
     vendor/xiaomi/mido/proprietary/vendor/radio/qcril_database/qcril.db:system/vendor/radio/qcril_database/qcril.db
-    #vendor/xiaomi/mido/proprietary/vendor/lib64/vendor.qti.voiceprint@1.0.so:system/vendor/lib64/vendor.qti.voiceprint@1.0.so \
-    vendor/xiaomi/mido/proprietary/vendor/lib/vendor.qti.voiceprint@1.0.so:system/vendor/lib/vendor.qti.voiceprint@1.0.so \
-    vendor/xiaomi/mido/proprietary/vendor/lib64/hw/sound_trigger.primary.msm8996.so:system/vendor/lib64/hw/sound_trigger.primary.msm8996.so \
 
 PRODUCT_PACKAGES += \
     com.quicinc.cne.api@1.0 \
@@ -1109,5 +1106,4 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     qcnvitems \
     qcrilhook \
-    qti-telephony-common \
-    
+    qti-telephony-common
